@@ -2,26 +2,73 @@
 
 // ロードしたときに実行される
 window.onload = function(){
-    initDraw101();
+    draw();
 }
 
-function initDraw101(){
+function draw(){
+    const canvas = document.getElementById("canvas101");
     /** @type {CanvasRenderingContext2D} */
-    const context101 = document.getElementById("canvas101").getContext("2d");
+    const context = canvas.getContext("2d");
+
+    const inputNameJa = document.getElementById("inputNameJa").value;
+    const inputNameEn = document.getElementById("inputNameEn").value;
+
+    const inputNameLength = [...inputNameJa].length;
+    let nameJaStartPos = 140;
+
+    // 文字数による場合分け
+    if(inputNameLength <= 2){
+        canvas.width = 900;
+        context.font = "200px 'Kosugi Maru'";
+        context.letterSpacing = "160px";
+        nameJaStartPos = 170;
+    }
+    else if(inputNameLength == 3){
+        canvas.width = 900;
+        context.font = "200px 'Kosugi Maru'";
+        context.letterSpacing = "40px";
+        nameJaStartPos = 110;
+    }
+    else if(inputNameLength == 4){
+        canvas.width = 1100;
+        context.font = "200px 'Kosugi Maru'";
+        context.letterSpacing = "40px";
+        nameJaStartPos = 90;
+    }
+    else if(inputNameLength == 5){
+        canvas.width = 1400;
+        context.font = "200px 'Kosugi Maru'";
+        context.letterSpacing = "40px";
+        nameJaStartPos = 120;
+    }
+    else if(inputNameLength >= 6){
+        canvas.width = 1400;
+        context.font = "160px 'Kosugi Maru'";
+        context.letterSpacing = "40px";
+        nameJaStartPos = 120;
+    }
+
+    // canvasのリセット
+    context.clearRect(0, 0, canvas.width, canvas.height);
 
     // 背景の描画
-    context101.fillStyle = "#fff";
-    context101.fillRect(0, 0, 900, 500);
+    context.fillStyle = "#fff";
+    context.fillRect(0, 0, canvas.width, canvas.height);
 
     // 枠線の描画
-    context101.lineWidth = 15;
-    context101.strokeStyle = "#2269b0";
-    strokeRoundRect(context101, 20, 20, 860, 460, 2);
+    context.lineWidth = 10;
+    context.strokeStyle = "#2269b0";
+    strokeRoundRect(context, 20, 20, canvas.width - 40, canvas.height - 40, 2);
 
-    context101.fillStyle = "#2269b0";
-    context101.font = "200px 'Kosugi Maru'";
-    context101.textBaseline = "top";
-    context101.textAlign = "left";
-    context101.fillText("立川市", 110, 80);
+    // 市町村名の描画
+    context.fillStyle = "#2269b0";
+    context.textBaseline = "top";
+    context.textAlign = "left";
+    context.fillText(inputNameJa, nameJaStartPos, 80);
 
+    // ローマ字の描画
+    context.font = "bold 100px Arial";
+    context.textAlign = "center";
+    context.letterSpacing = "0px";
+    context.fillText(inputNameEn, canvas.width / 2, 320);
 }

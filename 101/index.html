@@ -5,7 +5,7 @@
         <title>101(市町村)</title>
         
         <link rel="stylesheet" type="text/css" href="./css/style.css">
-        
+
         <script src="./js/101.js"></script>
         <script src="../js/commonCanvas.js"></script>
 
@@ -16,13 +16,15 @@
     </head>
 
     <body>
-        <canvas id="canvas101" width="1900", height="900"></canvas>
-
-        <p>市町村名</p>
-        <input type="text">
+        <canvas id="canvas101" width="900", height="500"></canvas>
 
         <br>
 
-        <button onclick="initDraw101()">再描画</button>
+        <label>市町村名<input type="text" id="inputNameJa" oninput="draw()"></label>
+        <label>ローマ字<input type="text" id="inputNameEn" oninput="draw()"></label>
+
+        <br>
+
+        <button onclick="draw()">再描画</button>
     </body>
 </html>
