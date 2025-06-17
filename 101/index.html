@@ -16,15 +16,16 @@
     </head>
 
     <body>
+        <h1>101(市町村)</h1>
+        <p>102-A(都道府県)、114-A(著名地点)、114の2-A(主要地点)にも使えます。</p>
         <canvas id="canvas101" width="900", height="500"></canvas>
 
         <br>
 
-        <label>市町村名<input type="text" id="inputNameJa" oninput="draw()"></label>
+        <label>地名<input type="text" id="inputNameJa" oninput="draw()"></label>
         <label>ローマ字<input type="text" id="inputNameEn" oninput="draw()"></label>
 
-        <br>
-
-        <button onclick="draw()">再描画</button>
+        <p>※通常、区はWard、市はCity、町はTown、村はVil. と表記します。</p>
+        <p>※県はPref. 、都はMet. と表記します。</p>
     </body>
 </html>
