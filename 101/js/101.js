@@ -1,5 +1,3 @@
-// レイアウト図45P A-1
-
 // ロードしたときに実行される
 window.onload = function(){
     draw();
