@@ -5,6 +5,15 @@ window.onload = function(){
     draw();
 }
 
+// インプットテキストをクリアする関数
+function clearInput(){
+    document.getElementById("inputNameJa").value = "";
+    document.getElementById("inputNameEn").value = "";
+
+    draw();
+}
+
+// 地名を描画する関数
 function draw(){
     const canvas = document.getElementById("canvas101");
     /** @type {CanvasRenderingContext2D} */
