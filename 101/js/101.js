@@ -64,6 +64,21 @@ function draw(){
     else if(tailSelectValue == "met"){
         inputNameEn += " Met.";
     }
+    else if(tailSelectValue == "city"){
+        inputNameEn += " City";
+    }
+    else if(tailSelectValue == "ward"){
+        inputNameEn += " Ward";
+    }
+    else if(tailSelectValue == "town"){
+        inputNameEn += " Town";
+    }
+    else if(tailSelectValue == "vil"){
+        inputNameEn += " Vil.";
+    }
+    else if(tailSelectValue == "sta"){
+        inputNameEn += " Sta.";
+    }
 
     // canvasのリセット
     context.clearRect(0, 0, canvas.width, canvas.height);
