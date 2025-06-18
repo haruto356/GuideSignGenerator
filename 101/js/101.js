@@ -17,8 +17,10 @@ function draw(){
     /** @type {CanvasRenderingContext2D} */
     const context = canvas.getContext("2d");
 
-    const inputNameJa = document.getElementById("inputNameJa").value;
-    const inputNameEn = document.getElementById("inputNameEn").value;
+    let inputNameJa = document.getElementById("inputNameJa").value;
+    let inputNameEn = document.getElementById("inputNameEn").value;
+
+    const tailSelectValue = document.getElementById("tailSelect").value;
 
     const inputNameLength = [...inputNameJa].length;
     let nameJaStartPos = 140;
@@ -53,6 +55,14 @@ function draw(){
         context.font = "160px 'Kosugi Maru'";
         context.letterSpacing = "40px";
         nameJaStartPos = 120;
+    }
+
+    // 末尾の文字の追加
+    if(tailSelectValue == "pref"){
+        inputNameEn += " Pref.";
+    }
+    else if(tailSelectValue == "met"){
+        inputNameEn += " Met.";
     }
 
     // canvasのリセット

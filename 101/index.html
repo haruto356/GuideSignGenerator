@@ -24,6 +24,12 @@
 
         <label>地名<input type="text" id="inputNameJa" oninput="draw()"></label>
         <label>ローマ字<input type="text" id="inputNameEn" oninput="draw()"></label>
+        <label>末尾</label>
+        <select id="tailSelect" onchange="draw()">
+            <option value="none">無し</option>
+            <option value="pref">県・府・道</option>
+            <option value="met">都</option>
+        </select>
 
         <br>
 
