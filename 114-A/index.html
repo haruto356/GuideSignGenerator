@@ -22,8 +22,16 @@
         <br>
 
         <label>地名<input type="text" id="inputNameJa" oninput="draw()"></label>
+        <br>
         <label>ローマ字<input type="text" id="inputNameEn" oninput="draw()"></label>
+        <br>
         <label>距離<input type="text" id="inputDistance" oninput="draw()"></label>
+        <label>単位</label>
+        <select id="distanceUnit" onchange="draw()">
+            <option value="none">無し</option>
+            <option value="m">m</option>
+            <option value="km">km</option>
+        </select>
 
         <br>
 

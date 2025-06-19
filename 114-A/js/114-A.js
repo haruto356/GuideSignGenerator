@@ -9,6 +9,8 @@ function clearInput(){
     document.getElementById("inputNameEn").value = "";
     document.getElementById("inputDistance").value = "";
 
+    document.getElementById("distanceUnit").selectedIndex = 0;
+
     draw();
 }
 
@@ -20,7 +22,62 @@ function draw(){
 
     const inputNameJa = document.getElementById("inputNameJa").value;
     const inputNameEn = document.getElementById("inputNameEn").value;
-    const inputDistance = document.getElementById("inputDistance").value;
+    let inputDistance = document.getElementById("inputDistance").value;
+
+    const inputNameLength = [...inputNameJa].length;
+    let nameJaStartPos = 160;
+    let nameEnStartPos = 440;
+    let arrowStartPos = 840;
+
+    const distanceUnitValue = document.getElementById("distanceUnit").value;
+    if(distanceUnitValue == "m"){
+        inputDistance += "m";
+    }
+    else if(distanceUnitValue == "km"){
+        inputDistance += "km";
+    }
+
+    // 文字数によって場合分け
+    if(inputNameLength <= 2){
+        canvas.width = 1200;
+        context.font = "200px 'Kosugi Maru'";
+        context.letterSpacing = "160px";
+        nameJaStartPos = 160;
+        nameEnStartPos = 440;
+        arrowStartPos = 840;
+    }
+    else if(inputNameLength == 3){
+        canvas.width = 1200;
+        context.font = "200px 'Kosugi Maru'";
+        context.letterSpacing = "40px";
+        nameJaStartPos = 100;
+        nameEnStartPos = 440;
+        arrowStartPos = 840;
+    }
+    else if(inputNameLength == 4){
+        canvas.width = 1400;
+        context.font = "200px 'Kosugi Maru'";
+        context.letterSpacing = "40px";
+        nameJaStartPos = 80;
+        nameEnStartPos = 540;
+        arrowStartPos = 1060;
+    }
+    else if(inputNameLength == 5){
+        canvas.width = 1700;
+        context.font = "200px 'Kosugi Maru'";
+        context.letterSpacing = "40px";
+        nameJaStartPos = 110;
+        nameEnStartPos = 690;
+        arrowStartPos = 1330;
+    }
+    else if(inputNameLength == 6){
+        canvas.width = 1700;
+        context.font = "160px 'Kosugi Maru'";
+        context.letterSpacing = "40px";
+        nameJaStartPos = 110;
+        nameEnStartPos = 690;
+        arrowStartPos = 1300;
+    }
 
     // canvasをクリア
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -34,26 +91,21 @@ function draw(){
     context.strokeStyle = "#2269b0";
     strokeRoundRect(context, 20, 20, canvas.width - 40, canvas.height - 40, 2);
 
-    // 矢印
-    drawRightArrow114(context, 840, 80);
-
     // 地名
     context.fillStyle = "#2269b0";
     context.textBaseline = "top";
-    context.textAlign = "center";
-    
-    context.letterSpacing = "160px";
-    context.font = "200px 'Kosugi Maru'";
-    context.fillText(inputNameJa, 20 + 10 + 130 + 200 + (160 / 2), 80);
+    context.textAlign = "left";
+    context.fillText(inputNameJa, nameJaStartPos, 80);
 
     // ローマ字
     context.font = "bold 100px Arial";
     context.letterSpacing = "0px";
-    context.fillText(inputNameEn, 20 + 10 + 130 + 200 + (160 / 2), 320);
+    context.textAlign = "center";
+    context.fillText(inputNameEn, nameEnStartPos, 320);
 
     // 距離
-    context.fillText(inputDistance + "km", 20 + 10 + 130 + 200 + 160 + 200 + 120 + (260) / 2, 320);
+    context.fillText(inputDistance, arrowStartPos + 130, 320);
 
-    // TODO: 文字数に応じてcanvasのサイズを変更する
-    // TODO: 矢印を左右逆にできるようにする
+    // 矢印
+    drawRightArrow114(context, arrowStartPos, 80);
 }
