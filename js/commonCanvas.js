@@ -1,3 +1,68 @@
+/**
+ * 114-A、114-Bで使われる右向きの矢印を描画する関数
+ * 横260 * 縦200
+ * @param {CanvasRenderingContext2D} context コンテキスト
+ * @param {Number} x 左上のX座標
+ * @param {Number} y 左上のY座標
+*/
+function drawRightArrow114(context, x, y){
+	context.beginPath();
+	context.moveTo(x, y + 75);
+	context.lineTo(x + 200, y + 75);
+	context.lineTo(x + 140, y);
+	context.lineTo(x + 180, y);
+	context.lineTo(x + 260, y + 100);
+	context.lineTo(x + 180, y + 200);
+	context.lineTo(x + 140, y + 200);
+	context.lineTo(x + 200, y + 125);
+	context.lineTo(x, y + 125);
+	context.fillStyle = "#2269b0";
+	context.fill();
+	context.closePath();
+
+	context.beginPath();
+	context.moveTo(x, y + 97);
+	context.lineTo(x + 260, y + 97);
+	context.lineTo(x + 260, y + 103);
+	context.lineTo(x, y + 103);
+	context.fillStyle = "#fff";
+	context.fill();
+	context.closePath();
+}
+
+/**
+ * 114-A、114-Bで使われる左向きの矢印を描画する関数
+ * 横260 * 縦200
+ * @param {CanvasRenderingContext2D} context コンテキスト
+ * @param {Number} x 左上のX座標
+ * @param {Number} y 左上のY座標
+*/
+function drawLeftArrow114(context, x, y){
+	context.beginPath();
+	context.moveTo(x + 260, y + 75);
+	context.lineTo(x + 60, y + 75);
+	context.lineTo(x + 120, y);
+	context.lineTo(x + 80, y);
+	context.lineTo(x, y + 100);
+	context.lineTo(x + 80, y + 200);
+	context.lineTo(x + 120, y + 200);
+	context.lineTo(x + 60, y + 125);
+	context.lineTo(x + 260, y + 125);
+	context.fillStyle = "#2269b0";
+	context.fill();
+	context.closePath();
+
+	context.beginPath();
+	context.moveTo(x, y + 97);
+	context.lineTo(x + 260, y + 97);
+	context.lineTo(x + 260, y + 103);
+	context.lineTo(x, y + 103);
+	context.fillStyle = "#fff";
+	context.fill();
+	context.closePath();
+}
+
+
 // 出典 https://qiita.com/ML081/items/6fb9e9c02675be832402
 /**
  * 角が丸い四角形のパスを作成する
