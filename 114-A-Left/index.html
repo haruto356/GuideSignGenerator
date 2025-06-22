@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>114-A(著名地点)左矢印</title>
+        
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+        <script src="./js/114-A.js"></script>
+        <script src="../js/commonCanvas.js"></script>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <h2>114-A(著名地点)左矢印</h2>
+        <canvas id="canvas114-A" width="1200" height="500"></canvas>
+
+        <br>
+
+        <table>
+            <tr>
+                <td>地名</td>
+                <td><input type="text" id="inputNameJa" oninput="draw()"></td>
+            </tr>
+            <tr>
+                <td>ローマ字</td>
+                <td><input type="text" id="inputNameEn" oninput="draw()"></td>
+            </tr>
+            <tr>
+                <td>距離</td>
+                <td><input type="text" id="inputDistance" oninput="draw()"></td>
+                <td>単位</td>
+                <td>
+                    <select id="distanceUnit" onchange="draw()">
+                        <option value="none">無し</option>
+                        <option value="m">m</option>
+                        <option value="km">km</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <button onclick="clearInput()">内容をクリア</button>
+    </body>
+</html>
