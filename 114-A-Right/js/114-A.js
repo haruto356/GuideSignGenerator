@@ -17,17 +17,6 @@ function download(){
     a.click();
 }
 
-// 入力内容を消去
-function clearInput(){
-    document.getElementById("inputNameJa").value = "";
-    document.getElementById("inputNameEn").value = "";
-    document.getElementById("inputDistance").value = "";
-
-    document.getElementById("distanceUnit").selectedIndex = 0;
-
-    draw();
-}
-
 // canvasの描画
 function draw(){
     const canvas = document.getElementById("canvas114-A");

@@ -1,3 +1,19 @@
+// input text、プルダウンメニューをリセットし、再描画する関数
+function clearInput(){
+    const inputs = document.querySelectorAll("input");
+    const selects = document.querySelectorAll("select");
+
+    inputs.forEach((input) => {
+        input.value = "";
+    });
+
+    selects.forEach((select) => {
+        select.selectedIndex = 0;
+    });
+
+    draw();
+}
+
 /**
  * 114-A、114-Bで使われる右向きの矢印を描画する関数
  * 横260 * 縦200

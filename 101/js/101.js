@@ -17,16 +17,6 @@ function download(){
     a.click();
 }
 
-// インプットテキストをクリアする関数
-function clearInput(){
-    document.getElementById("inputNameJa").value = "";
-    document.getElementById("inputNameEn").value = "";
-
-    document.getElementById("tailSelect").selectedIndex = 0;
-
-    draw();
-}
-
 // 地名を描画する関数
 function draw(){
     const canvas = document.getElementById("canvas101");
