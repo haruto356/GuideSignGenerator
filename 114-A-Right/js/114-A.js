@@ -6,9 +6,13 @@ window.onload = function(){
 // 生成した画像を保存する関数
 function download(){
     const canvas = document.getElementById("canvas114-A");
+    const a = document.getElementById("download");
+    const fileName = document.getElementById("inputNameJa").value;
     var base64 = canvas.toDataURL("image/png");
-    document.getElementById("download").href = base64;
-    document.getElementById("download").click();
+
+    a.download = fileName;
+    a.href = base64;
+    a.click();
 }
 
 // 入力内容を消去
