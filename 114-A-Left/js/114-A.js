@@ -3,8 +3,13 @@ window.onload = function(){
     draw();
 }
 
+// フォントの読み込みが終わったら再描画
+document.fonts.ready.then(() => draw());
+
 // 生成した画像を保存する関数
 function download(){
+    draw();
+
     const canvas = document.getElementById("canvas114-A");
     const a = document.getElementById("download");
     const fileName = document.getElementById("inputNameJa").value;
