@@ -3,9 +3,6 @@ window.onload = function(){
     draw();
 }
 
-// フォントの読み込みが終わったら再描画
-document.fonts.ready.then(() => draw());
-
 // 生成した画像を保存する関数
 function download(){
     draw();
