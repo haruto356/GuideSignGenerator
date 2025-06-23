@@ -1,6 +1,12 @@
-#canvas101 {
+canvas {
     width: 50%;
     height: 50%;
+}
+@media screen and (max-width: 700px) {
+    canvas {
+        width: 75%;
+        height: 75%;
+    }
 }
 
 td {
