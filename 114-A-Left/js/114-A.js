@@ -3,6 +3,14 @@ window.onload = function(){
     draw();
 }
 
+// 生成した画像を保存する関数
+function download(){
+    const canvas = document.getElementById("canvas114-A");
+    var base64 = canvas.toDataURL("image/png");
+    document.getElementById("download").href = base64;
+    document.getElementById("download").click();
+}
+
 // 入力内容を消去
 function clearInput(){
     document.getElementById("inputNameJa").value = "";
