@@ -64,26 +64,29 @@ function draw(){
     }
 
     // 末尾の文字の追加
-    if(tailSelectValue == "pref"){
-        inputNameEn += " Pref.";
-    }
-    else if(tailSelectValue == "met"){
-        inputNameEn += " Met.";
-    }
-    else if(tailSelectValue == "city"){
-        inputNameEn += " City";
-    }
-    else if(tailSelectValue == "ward"){
-        inputNameEn += " Ward";
-    }
-    else if(tailSelectValue == "town"){
-        inputNameEn += " Town";
-    }
-    else if(tailSelectValue == "vil"){
-        inputNameEn += " Vil.";
-    }
-    else if(tailSelectValue == "sta"){
-        inputNameEn += " Sta.";
+    switch(tailSelectValue){
+        default:
+            break;
+        case "pref":
+            inputNameEn += " Pref.";
+            break;
+        case "met":
+            inputNameEn += " Met.";
+            break;
+        case "city":
+            inputNameEn += " City";
+            break;
+        case "ward":
+            inputNameEn += " Ward";
+            break;
+        case "town":
+            inputNameEn += " Town";
+            break;
+        case "vil":
+            inputNameEn += " Vil.";
+            break;
+        case "sta":
+            inputNameEn += " Sta.";
     }
 
     // canvasのリセット
