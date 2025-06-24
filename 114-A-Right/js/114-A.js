@@ -6,20 +6,12 @@ window.onload = function(){
 // 生成した画像を保存する関数
 function download(){
     draw();
-
-    const canvas = document.getElementById("canvas114-A");
-    const a = document.getElementById("download");
-    const fileName = document.getElementById("inputNameJa").value;
-    var base64 = canvas.toDataURL("image/png");
-
-    a.download = fileName;
-    a.href = base64;
-    a.click();
+    downloadAsPng(document.getElementById("inputNameJa").value);
 }
 
 // canvasの描画
 function draw(){
-    const canvas = document.getElementById("canvas114-A");
+    const canvas = document.getElementById("canvas");
     /** @type {CanvasRenderingContext2D} */
     const context = canvas.getContext("2d");
 

@@ -14,6 +14,21 @@ function clearInput(){
     draw();
 }
 
+/**  
+ * 生成した画像を保存する関数 
+ * canvasのid: "canvas"
+ * aタグのid: "download"
+ * @param {String} fileName ファイル名
+*/
+function downloadAsPng(fileName){
+	const canvas = document.getElementById("canvas");
+	const a = document.getElementById("download");
+
+	a.download = fileName;
+	a.href = canvas.toDataURL("image/png");
+	a.click();
+}
+
 /**
  * 114-A、114-Bで使われる右向きの矢印を描画する関数
  * 横260 * 縦200
