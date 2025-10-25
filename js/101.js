@@ -18,7 +18,13 @@ function draw(){
     let inputNameJa = document.getElementById("inputNameJa").value;
     let inputNameEn = document.getElementById("inputNameEn").value;
 
-    const tailSelectValue = document.getElementById("tailSelect").value;
+    let tailSelectValue = "";
+
+    for(let i = 0; i < document.getElementsByName("tailSelect").length; i++){
+        if(document.getElementsByName("tailSelect").item(i).checked){
+            tailSelectValue = document.getElementsByName("tailSelect").item(i).value;
+        }
+    }
 
     const inputNameLength = [...inputNameJa].length;
     let nameJaStartPos = 140;

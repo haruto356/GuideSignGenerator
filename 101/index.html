@@ -34,7 +34,20 @@
             <tr>
                 <td>末尾</td>
                 <td>
-                    <select id="tailSelect" onchange="draw()">
+                    <form id="tailSelect" onchange="draw()">
+                        <label><input type="radio" name="tailSelect" value="none" checked>なし</label>
+                        <label><input type="radio" name="tailSelect" value="pref">県</label>
+                        <label><input type="radio" name="tailSelect" value="pref">府</label>
+                        <label><input type="radio" name="tailSelect" value="pref">道</label>
+                        <label><input type="radio" name="tailSelect" value="met">都</label>
+                        <label><input type="radio" name="tailSelect" value="city">市</label>
+                        <label><input type="radio" name="tailSelect" value="ward">区</label>
+                        <label><input type="radio" name="tailSelect" value="town">町</label>
+                        <label><input type="radio" name="tailSelect" value="vil">村</label>
+                        <label><input type="radio" name="tailSelect" value="sta">駅</label>
+                    </form>
+
+                    <!-- <select id="tailSelect" onchange="draw()">
                         <option value="none">無し</option>
                         <option value="pref">県</option>
                         <option value="pref">府</option>
@@ -45,7 +58,7 @@
                         <option value="town">町</option>
                         <option value="vil">村</option>
                         <option value="sta">駅</option>
-                    </select>
+                    </select> -->
                 </td>
             </tr>
         </table>
