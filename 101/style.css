@@ -12,3 +12,7 @@ canvas {
 td {
     text-align: center;
 }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI","Hiragino Sans","Meiryo";
+}
