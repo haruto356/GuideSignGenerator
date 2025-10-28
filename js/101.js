@@ -18,11 +18,12 @@ function draw(){
     let inputNameJa = document.getElementById("inputNameJa").value;
     let inputNameEn = document.getElementById("inputNameEn").value;
 
+    const tailSelectArray = document.getElementsByName("tailSelect");
     let tailSelectValue = "";
 
-    for(let i = 0; i < document.getElementsByName("tailSelect").length; i++){
-        if(document.getElementsByName("tailSelect").item(i).checked){
-            tailSelectValue = document.getElementsByName("tailSelect").item(i).value;
+    for(let i = 0; i < tailSelectArray.length; i++){
+        if(tailSelectArray.item(i).checked){
+            tailSelectValue = tailSelectArray.item(i).value;
         }
     }
 
