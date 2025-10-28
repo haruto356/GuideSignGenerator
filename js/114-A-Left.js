@@ -24,12 +24,12 @@ function draw(){
     let nameEnStartPos = 440;
     let arrowStartPos = 100;
 
-    const distanceUnitValue = document.getElementById("distanceUnit").value;
-    if(distanceUnitValue == "m"){
-        inputDistance += "m";
-    }
-    else if(distanceUnitValue == "km"){
-        inputDistance += "km";
+    const distanceUnitArray = document.getElementsByName("distanceUnit");
+
+    for(let i = 0; i < distanceUnitArray.length; i++){
+        if(distanceUnitArray.item(i).checked && distanceUnitArray.item(i).value != "none"){
+            inputDistance += distanceUnitArray.item(i).value;
+        }
     }
 
     // 文字数によって場合分け

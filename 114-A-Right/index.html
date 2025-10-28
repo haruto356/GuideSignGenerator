@@ -38,11 +38,11 @@
             <tr>
                 <td>単位</td>
                 <td>
-                    <select id="distanceUnit" onchange="draw()">
-                        <option value="none">無し</option>
-                        <option value="m">m</option>
-                        <option value="km">km</option>
-                    </select>
+                    <form id="distanceUnit" onchange="draw()">
+                        <label><input type="radio" name="distanceUnit" value="none" checked>無し</label>
+                        <label><input type="radio" name="distanceUnit" value="m">m</label>
+                        <label><input type="radio" name="distanceUnit" value="km">km</label>
+                    </form>
                 </td>
             </tr>
         </table>
