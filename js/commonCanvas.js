@@ -1,14 +1,16 @@
 // input text、プルダウンメニューをリセットし、再描画する関数
 function clearInput(){
     const inputs = document.querySelectorAll("input");
-    const selects = document.querySelectorAll("select");
 
     inputs.forEach((input) => {
-        input.value = "";
-    });
-
-    selects.forEach((select) => {
-        select.selectedIndex = 0;
+		// テキストボックス
+		if(input.type == "text"){
+			input.value = "";
+		}
+		// ラジオボタン
+		else if(input.type == "radio" && input.value == "none"){
+			input.checked = true;
+		}
     });
 
     draw();
