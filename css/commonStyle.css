@@ -1,0 +1,11 @@
+/* 全ページ共通のスタイル */
+
+/* フォントの設定 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI","Hiragino Sans","Meiryo";
+}
+
+/* リンクを青色に設定 */
+a {
+    color: blue;
+}

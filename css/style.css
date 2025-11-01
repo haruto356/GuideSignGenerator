@@ -10,11 +10,3 @@
 #container div {
     outline: 1px solid black;
 }
-
-a {
-    color: blue;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", "Segoe UI","Hiragino Sans","Meiryo";
-}
