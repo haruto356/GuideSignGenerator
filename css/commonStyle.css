@@ -9,3 +9,11 @@ body {
 a {
     color: blue;
 }
+
+/* テキストボックスの設定 */
+input {
+    background-color: #FBFBFB;
+    border: 1px solid #AAA;
+    border-radius: 3px;
+    padding: 5px;
+}
