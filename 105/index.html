@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>114-A(著名地点)左矢印</title>
+        
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="../css/commonStyle.css">
+
+        <script src="../js/105.js"></script>
+        <script src="../js/commonCanvas.js"></script>
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <h2>105(方面・方向及び距離)</h2>
+        <canvas id="canvas" width="1200" height="500"></canvas>
+
+        <br>
+
+        <table>
+            <tr>
+                <td>地名1</td>
+                <td><input type="text"></td>
+                <td>地名1ローマ字</td>
+                <td><input type="text"></td>
+                <td>距離</td>
+                <td><input type="text"></td>
+                <td>矢印</td>
+                <td>
+                    <form>
+                        <label><input type="radio" name="arrow1" checked>右</label>
+                        <label><input type="radio" name="arrow1">左</label>
+                        <label><input type="radio" name="arrow1">上</label>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>地名2</td>
+                <td><input type="text"></td>
+                <td>地名2ローマ字</td>
+                <td><input type="text"></td>
+                <td>距離</td>
+                <td><input type="text"></td>
+                <td>矢印</td>
+                <td>
+                    <form>
+                        <label><input type="radio" name="arrow2" checked>右</label>
+                        <label><input type="radio" name="arrow2">左</label>
+                        <label><input type="radio" name="arrow2">上</label>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>地名3</td>
+                <td><input type="text"></td>
+                <td>地名3ローマ字</td>
+                <td><input type="text"></td>
+                <td>距離</td>
+                <td><input type="text"></td>
+                <td>矢印</td>
+                <td>
+                    <form>
+                        <label><input type="radio" name="arrow3" checked>右</label>
+                        <label><input type="radio" name="arrow3">左</label>
+                        <label><input type="radio" name="arrow3">上</label>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+        <br>
+
+        <button onclick="clearInput()">内容をクリア</button>
+
+        <button onclick="download()">保存する</button>
+        <a id="download" href="#" download="105.png"></a>
+
+        <br><br>
+
+        <p>フォントが反映されない場合は下の再描画ボタンを押してください</p>
+        <button onclick="draw()">再描画</button>
+    </body>
+</html>
