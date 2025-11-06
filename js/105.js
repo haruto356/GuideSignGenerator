@@ -39,6 +39,13 @@ function draw(){
         canvas.height = 1300;
     }
 
-    context.fillStyle = "#ccc";
+    // 背景の描画
+    context.fillStyle = "#2269b0";
     context.fillRect(0,0,canvas.width, canvas.height)
+
+    context.fillStyle = "#fff";
+    fillRoundRect(context, 10, 10, canvas.width - 20, canvas.height - 20, 2);
+
+    context.fillStyle = "#2269b0";
+    fillRoundRect(context, 15, 15, canvas.width - 30, canvas.height - 30, 2)
 }
