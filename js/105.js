@@ -47,5 +47,33 @@ function draw(){
     fillRoundRect(context, 10, 10, canvas.width - 20, canvas.height - 20, 2);
 
     context.fillStyle = "#2269b0";
-    fillRoundRect(context, 15, 15, canvas.width - 30, canvas.height - 30, 2)
+    fillRoundRect(context, 15, 15, canvas.width - 30, canvas.height - 30, 2);
+
+    // 地名1の矢印の描画
+    arrowSelectArray1 = document.getElementsByName("arrow1");
+    for(let i = 0; i < arrowSelectArray1.length; i++){
+        if(arrowSelectArray1.item(i).checked){
+            drawArrow105(context, canvas.width - 360, canvas.height - (canvas.height - 130), i);
+        }
+    }
+
+    // 地名2の矢印の描画
+    if(inputNameJa2 != ""){
+        arrowSelectArray2 = document.getElementsByName("arrow2");
+        for(let i = 0; i < arrowSelectArray2.length; i++){
+            if(arrowSelectArray2.item(i).checked){
+                drawArrow105(context, canvas.width - 360, canvas.height - (canvas.height - 520), i);
+            }
+        }
+    }
+
+    // 地名3の矢印の描画
+    if(inputNameJa3 != ""){
+        arrowSelectArray3 = document.getElementsByName("arrow3");
+        for(let i = 0; i < arrowSelectArray3.length; i++){
+            if(arrowSelectArray3.item(i).checked){
+                drawArrow105(context, canvas.width - 360, canvas.height - (canvas.height - 910), i);
+            }
+        }
+    }
 }

@@ -147,3 +147,41 @@ function strokeRoundRect(ctx, x, y, w, h, r) {
 	createRoundRectPath(ctx, x, y, w, h, r);
 	ctx.stroke();		
 }
+
+/**
+ * 105に使用する矢印を描画する関数
+ * @param {CanvasRenderingContext2D} ctx コンテキスト
+ * @param {Number} x 左上のX座標
+ * @param {Number} y 左上のY座標
+ * @param {Number} direction 向き（0:右 1:上 2: 左）
+ */
+function drawArrow105(ctx, x, y, direction){
+	switch(direction){
+		case 0:
+			drawArrow105Right(ctx, x, y);
+			break;
+	}
+}
+
+/**
+ * 105の右矢印を描画する関数
+ * @param {*} ctx コンテキスト
+ * @param {*} x 左上のX座標
+ * @param {*} y 左上のY座標
+ */
+function drawArrow105Right(ctx, x, y){
+	ctx.beginPath();
+	ctx.moveTo(x, y + 55);
+	ctx.lineTo(x + 150, y + 55);
+	ctx.lineTo(x + 140, y + 20);
+	ctx.lineTo(x + 143, y + 20);
+	ctx.lineTo(x + 260, y + 99);
+	ctx.lineTo(x + 260, y + 101);
+	ctx.lineTo(x + 143, y + 180);
+	ctx.lineTo(x + 140, y + 180);
+	ctx.lineTo(x + 150, y + 145);
+	ctx.lineTo(x, y + 145);
+	ctx.fillStyle = "#fff";
+	ctx.fill();
+	ctx.closePath();
+}
