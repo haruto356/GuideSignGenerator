@@ -39,6 +39,9 @@ function draw(){
         canvas.height = 1300;
     }
 
+    // canvasのリセット
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
     // 背景の描画
     context.fillStyle = "#2269b0";
     context.fillRect(0,0,canvas.width, canvas.height)
@@ -76,4 +79,30 @@ function draw(){
             }
         }
     }
+
+    // 文字数による場合分け
+    const inputNameJa1Length = [...inputNameJa1].length;
+    const inputNameJa2Length = [...inputNameJa2].length;
+    const inputNameJa3Length = [...inputNameJa3].length;
+
+    const inputNameMaxLength = Math.max(inputNameJa1Length, inputNameJa2Length, inputNameJa3Length);
+
+    let nameJaStartPosX = 130;
+
+    switch(inputNameMaxLength){
+        case 0:
+        case 1:
+        case 2:
+            // canvas.width = 1200;
+            context.font = "200px 'Kosugi Maru'";
+            context.letterSpacing = "160px";
+            nameJaStartPosX = 170;
+            break;
+    }
+
+    // 市町村名の描画
+    context.fillStyle = "#fff";
+    context.textBaseline = "top";
+    context.textAlign = "left";
+    context.fillText(inputNameJa1, nameJaStartPosX, 80);
 }
